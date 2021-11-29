@@ -1,28 +1,30 @@
 import * as React from "react";
 import "./style.scss";
-import loginModel from "./LoginModel";
+import Store from "../../store/Store";
+import {createBrowserHistory} from "history";
 
 interface FormData {
-    login:string,
-    password:string
+    login: string,
+    password: string
 }
 
-class Login extends React.Component<{}, FormData> {
+class _loginForm extends React.Component<{}, FormData> {
 
     state: FormData = {
-        login:"",
-        password:""
+        login: "",
+        password: ""
     }
 
-    componentDidMount() {
+    private signIn = async (event: any) => {
+        // event.preventDefault()
+        // let history = createBrowserHistory()
+        // try {
+        //     await Store.signIn(this.state.login, this.state.password)
+        //     history.push("/agents")
+        // } catch(error) {
+        //     console.error(error)
+        // }
 
-    }
-
-    private signIn = (event:any) => {
-        event.preventDefault()
-        console.log("sign in!")
-        loginModel.signIn(this.state.login, this.state.password)
-            .then(data => console.log("response ", data))
     }
 
     render() {
@@ -33,10 +35,10 @@ class Login extends React.Component<{}, FormData> {
                     <fieldset>
                         <form onSubmit={this.signIn}>
                             <input type="text" value={this.state.login} onChange={(event) => {
-                               this.setState({login: event.target.value})
+                                this.setState({login: event.target.value})
                             }} required placeholder="Логин"/>
                             <input value={this.state.password} onChange={(event) => {
-                               this.setState({password: event.target.value})
+                                this.setState({password: event.target.value})
                             }} type="password" required placeholder="Пароль"/>
                             <input type="submit" value="ВОЙТИ"/>
                         </form>
@@ -47,4 +49,4 @@ class Login extends React.Component<{}, FormData> {
     }
 }
 
-export default Login;
+export default _loginForm;
