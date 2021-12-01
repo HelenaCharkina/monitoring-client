@@ -15,7 +15,7 @@ export default class ApiService {
         })
     }
 
-    protected static post(url: string, data?: any): Promise<Response> {
+    protected static post(url: string, data: any): Promise<Response> {
         return this.ajax({
             url,
             data,

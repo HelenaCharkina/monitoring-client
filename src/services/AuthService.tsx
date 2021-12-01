@@ -17,9 +17,17 @@ export default class AuthService extends ApiService {
     }
 
     public static async refresh(): Promise<AuthResponse> {
-        const response = await this.get('/auth/refresh')
+        const response = await this.get(`/auth/refresh/${parseJwt(localStorage.getItem('access_token')).user_id}`)
         const json = await response.json()
 
         return json as AuthResponse
     }
 }
+
+function parseJwt(token: string): any {
+    try {
+        return JSON.parse(atob(token.split('.')[1]));
+    } catch (e) {
+        return null;
+    }
+};
