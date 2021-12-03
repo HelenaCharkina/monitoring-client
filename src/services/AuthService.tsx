@@ -3,24 +3,16 @@ import AuthResponse from "../api/response/AuthResponse";
 import ApiService from "../api/ApiService";
 
 export default class AuthService extends ApiService {
-    public static async login(request: AuthRequest): Promise<AuthResponse> {
-        const response = await this.post('/auth/login', request)
-        const json = await response.json()
-
-        return json as AuthResponse
+    public static login(request: AuthRequest): Promise<AuthResponse> {
+        return this.post('/auth/login', request)
     }
 
     public static async logout(): Promise<void> {
-        await this.get('/auth/logout')
-
-        return
+        return this.get('/auth/logout')
     }
 
-    public static async refresh(): Promise<AuthResponse> {
-        const response = await this.get(`/auth/refresh/${parseJwt(localStorage.getItem('access_token')).user_id}`)
-        const json = await response.json()
-
-        return json as AuthResponse
+    public static async refresh(token: string): Promise<AuthResponse> {
+        return this.get(`/auth/refresh/${parseJwt(token).user_id}`)
     }
 }
 

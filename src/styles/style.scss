@@ -6,14 +6,26 @@
   color: #f1f2f2;
   width: 100%;
   display: flex;
+  justify-content: space-around;
   align-items: center;
   box-shadow: 0 1px 1px #858585;
 }
 
+.rightContainer {
+ font-size: 20px;
+   display: flex;
+   align-items: center;
+}
+
+.leftContainer {
+    display: flex;
+    align-items: center;
+}
+
+
 .logo {
   width: 75px;
   height: 50px;
-  margin-left: 150px;
   margin-right: 5px;
 }
 
@@ -23,8 +35,13 @@
 
 .userName {
 
+ margin-right:35px;
 }
 
 .logoutButton {
+    cursor: pointer;
+}
+
+.logoutButton:hover {
 
 }

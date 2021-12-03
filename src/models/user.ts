@@ -1,3 +1,3 @@
 export  default class User {
-    public Name: string
+    public name: string
 }

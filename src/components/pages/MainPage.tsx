@@ -1,12 +1,10 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import {FC} from "react";
 
-const MainPage: React.FC<{}> = () => (
-  <>
-    <div className="layout-extra-large">
-      <Link to="/login">to login</Link>
+const MainPage:  FC = () =>  (
+    <div >
     </div>
-  </>
 );
 
 export default MainPage;
