@@ -7,11 +7,11 @@ export default class AuthService extends ApiService {
         return this.post('/auth/login', request)
     }
 
-    public static async logout(): Promise<void> {
-        return this.get('/auth/logout')
+    public static logout(token: string): Promise<void> {
+        return this.get(`/auth/logout/${parseJwt(token).user_id}`)
     }
 
-    public static async refresh(token: string): Promise<AuthResponse> {
+    public static refresh(token: string): Promise<AuthResponse> {
         return this.get(`/auth/refresh/${parseJwt(token).user_id}`)
     }
 }

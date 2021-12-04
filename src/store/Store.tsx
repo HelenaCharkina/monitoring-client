@@ -37,8 +37,13 @@ export default class Store {
 
     public async logout(): Promise<void> {
         try {
-            const response = await AuthService.logout()
+            let token = localStorage.getItem('access_token')
+            if (token === "undefined") {
+                return
+            }
+            const response = await AuthService.logout(token)
             localStorage.removeItem('access_token')
+            localStorage.removeItem('user_name')
             this.setAuth(false)
             this.setUser({} as User)
         } catch (e) {

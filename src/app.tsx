@@ -7,7 +7,7 @@ import Agents from "./components/agents/agents";
 import LoginForm from "./components/LoginForm/LoginForm";
 import {Context} from "./index";
 import {observer} from "mobx-react-lite";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 
 const App: FC = () => {
     const {store} = useContext(Context)
