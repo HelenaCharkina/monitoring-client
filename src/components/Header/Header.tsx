@@ -17,7 +17,7 @@ const Header: FC = () => {
         <div className="header">
             <div className="leftContainer">
                 <img className="logo" src="/img/comp2.svg" alt=""/>
-                <div className="name">Monitoring System</div>
+                <div className="appName">Monitoring System</div>
             </div>
             <div className="rightContainer">
                 <div className="userName">{store.isAuth ? store.User.name : ''} </div>

@@ -1,0 +1,92 @@
+.agentContainer {
+  background-color: #fff;
+  width: 100%;
+  margin: 10px;
+  margin-top: 40px;
+  border-radius: 10%;
+  padding: 10px 30px;
+  font-size: 14px;
+  height: 90%;
+
+  input {
+    //border-bottom: 1px solid #303032;
+  }
+  .label {
+    font-weight: bold;
+  }
+}
+
+.agentInfo {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  .host {
+    width: 120px;
+  }
+  .port {
+    width: 120px;
+  }
+
+  .name {
+    width: 120px;
+  }
+
+  .stateIcon {
+    height: 20px;
+    width: 20px;
+    margin: 0 15px;
+    cursor: pointer;
+  }
+}
+
+.agentDescription {
+  margin: 10px;
+  .description {
+    width: 80%;
+  }
+}
+
+.statistic {
+  position: absolute;
+  bottom: 50px;
+
+  .data {
+    display: flex;
+  }
+
+  .infoContainer {
+    .entity {
+      .entityInfo {
+        display: flex;
+
+        .data {
+          display: block;
+          margin-left: 10px;
+        }
+
+        .stats {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
+.filters {
+  margin-left: 40px;
+  align-items: center;
+  display: flex;
+  .select {
+    width: 120px;
+  }
+  .showButton {
+    background: #303032;
+    border-radius: 3px;
+    color: #f1f2f2;
+    float: right;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 8px 12px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+}

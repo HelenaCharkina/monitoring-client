@@ -1,56 +1,119 @@
 .generalContainer {
-    display:flex;
+  display: flex;
+  color: #080808;
+  height: 90%;
 }
 
 .leftPanel {
-    height: 100vh;
-    width:40px;
-    background-color: #303032;
-    margin-top: 2px;
-    display: flex;
-    flex-direction: column;
-    padding-top: 10px;
-    align-items:center;
+  height: 100vh;
+  width: 40px;
+  background-color: #303032;
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  align-items: center;
 }
 
 .panelIcon {
-    margin-top:10px;
-    margin-bottom:10px;
-    height:20px;
-    width:20px;
-    cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
 }
 
+/* ---------- AGENTS LIST ---------- */
+
 .agentsList {
-    margin:20px;
+  margin: 10px;
 
-    table {
-         border-spacing: 0px ;
-        tbody {
-            font-size: 14px;
+  table {
+    border-spacing: 0px;
+    tbody {
+      font-size: 14px;
 
-            tr:hover {
-                        background-color:#d8d9d9 ;
-                     }
-        }
-        th {
-            padding:8px;
-            border-bottom: 1px solid #303032;
-        };
-         td {
-             padding:8px;
-             margin: 5px;
-         }
-         tr {
-            cursor: pointer;
-         }
-
+      tr:hover {
+        background-color: #e3e8ff;
+      }
+      .iconCell {
+        text-align: center;
+      }
+    }
+    th {
+      padding: 8px;
+      border-bottom: 1px solid #303032;
+    }
+    td {
+      padding: 8px;
+      margin: 5px;
+    }
+    tr {
+      cursor: pointer;
     }
 
-    .stateIcon {
-        height:20px;
-        width:20px;
+    span {
+      height: 20px !important;
+      width: 20px !important;
+      font-size: 18px !important;
     }
+  }
+}
 
+.stateIcon {
+  height: 20px;
+  width: 20px;
+}
 
+.green {
+  background-color: #84e900;
+  box-shadow: inset -1px -1px 0px #00c322, inset 0px 0px 4px #00c322;
+}
+.yellow {
+  background-color: yellow;
+  box-shadow: inset -1px -1px 0px #ffb800, inset 0px 0px 4px #ffb800;
+}
+.sphere {
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+}
+.sphere::after {
+  background-color: rgba(255, 255, 255, 255);
+  content: "";
+  height: 50%;
+  width: 30%;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  border-radius: 50%;
+  transform: rotate(40deg);
+}
+
+.addButton {
+  background: #303032;
+  border-radius: 3px;
+  color: #f1f2f2;
+  float: right;
+  font-weight: bold;
+  padding: 8px 12px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 10px;
+  left: 100px;
+}
+
+.messagesButton {
+  background: #303032;
+  border-radius: 3px;
+  color: #f1f2f2;
+  float: right;
+  font-weight: bold;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin: 5px;
+  position: fixed;
+  right: 0;
 }

@@ -12,16 +12,15 @@
 }
 
 .rightContainer {
- font-size: 20px;
-   display: flex;
-   align-items: center;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .leftContainer {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
-
 
 .logo {
   width: 75px;
@@ -29,20 +28,19 @@
   margin-right: 5px;
 }
 
-.name {
+.appName {
   font-size: 25px;
 }
 
 .userName {
-width:120px;
- margin-right:20px;
+  width: 120px;
+  margin-right: 20px;
 }
 
 .logoutButton {
-    cursor: pointer;
-    width:60px;
+  cursor: pointer;
+  width: 60px;
 }
 
 .logoutButton:hover {
-
 }

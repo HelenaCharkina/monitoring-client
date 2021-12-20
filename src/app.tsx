@@ -3,7 +3,7 @@ import {FC, useContext, useEffect} from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import MainPage from "./components/pages/MainPage";
 import "./styles/style.scss";
-import Agents from "./components/agents/agents";
+import AgentWindow from "./components/AgentWindow/AgentWindow";
 import LoginForm from "./components/LoginForm/LoginForm";
 import {Context} from "./index";
 import {observer} from "mobx-react-lite";
@@ -19,12 +19,15 @@ const App: FC = () => {
     }, [])
 
     if (store.isLoading) {
-        return <div>Загрузка...</div>
+        return <div>
+            <Header/>
+            <div>Загрузка...</div>
+        </div>
     }
 
     if (!store.isAuth) {
         return (
-            <div>
+            <div className="window">
                 <Header/>
                 <LoginForm/>
             </div>
@@ -32,15 +35,12 @@ const App: FC = () => {
     }
 
     return (
-        <div>
+        <div className="window">
             <Header/>
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/">
                         <MainPage/>
-                    </Route>
-                    <Route exact path="/agents">
-                        <Agents/>
                     </Route>
                 </Switch>
             </BrowserRouter>
